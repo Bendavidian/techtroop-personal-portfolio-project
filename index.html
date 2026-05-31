@@ -39,8 +39,8 @@
           <a href="#contact" class="btn btn-primary">Get In Touch</a>
         </div>
         <div class="hero-image">
-          <div class="profile-placeholder" role="img" aria-label="Professional photo placeholder">
-            <span>Professional Photo</span>
+          <div class="profile-img-container">
+            <img src="images/ben.png" alt="Ben Davidian" class="profile-img">
           </div>
         </div>
       </div>
@@ -111,43 +111,82 @@
       <div class="container">
         <h2 class="section-title">My Projects</h2>
         <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-image" role="img" aria-label="Project image placeholder">
-              <span>Project Image</span>
-            </div>
-            <div class="project-body">
-              <h3>Video Sharing Platform</h3>
-              <p>
-                A full-stack video sharing application with user uploads, streaming,
-                and content discovery built with modern web technologies.
-              </p>
-              <a href="#" class="btn btn-project">View Project</a>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-image" role="img" aria-label="Project image placeholder">
-              <span>Project Image</span>
+          <article class="project-card featured-project">
+            <div class="carousel">
+              <input type="radio" name="yakarly-carousel" id="yk-slide1" checked>
+              <input type="radio" name="yakarly-carousel" id="yk-slide2">
+              
+              <div class="carousel-slides">
+                <div class="carousel-slide slide-1">
+                  <img src="images/yakarly1.png" alt="Yakarly Financial Evaluation Platform - Homepage">
+                </div>
+                <div class="carousel-slide slide-2">
+                  <img src="images/yakarly2.png" alt="Yakarly Financial Evaluation Platform - Chatbot">
+                </div>
+              </div>
+              
+              <div class="carousel-controls">
+                <label for="yk-slide1" class="carousel-bullet"></label>
+                <label for="yk-slide2" class="carousel-bullet"></label>
+              </div>
+
+              <div class="carousel-arrows">
+                <label for="yk-slide2" class="arrow arrow-next slide1-arrow" aria-label="Next screenshot"></label>
+                <label for="yk-slide1" class="arrow arrow-prev slide2-arrow" aria-label="Previous screenshot"></label>
+              </div>
             </div>
             <div class="project-body">
               <h3>Yakarly Financial Evaluation Platform</h3>
               <p>
-                A financial evaluation platform that helps users analyze investments
-                and compare options with clear, data-driven insights.
+                AI-powered financial evaluation platform that helps users analyze pension funds, training funds, life insurance and investment products through a guided conversational experience.
               </p>
-              <a href="#" class="btn btn-project">View Project</a>
+              <a href="https://github.com/Bendavidian/yakarly" class="btn btn-project" target="_blank" rel="noopener noreferrer">View Project</a>
             </div>
           </article>
+
           <article class="project-card">
-            <div class="project-image" role="img" aria-label="Project image placeholder">
-              <span>Project Image</span>
+            <div class="carousel">
+              <input type="radio" name="youtube-carousel" id="yt-slide1" checked>
+              <input type="radio" name="youtube-carousel" id="yt-slide2">
+              
+              <div class="carousel-slides">
+                <div class="carousel-slide slide-1">
+                  <img src="images/youtube1.png" alt="YouTube Video Sharing Platform - Homepage">
+                </div>
+                <div class="carousel-slide slide-2">
+                  <img src="images/youtube2.png" alt="YouTube Video Sharing Platform - Video Player">
+                </div>
+              </div>
+              
+              <div class="carousel-controls">
+                <label for="yt-slide1" class="carousel-bullet"></label>
+                <label for="yt-slide2" class="carousel-bullet"></label>
+              </div>
+
+              <div class="carousel-arrows">
+                <label for="yt-slide2" class="arrow arrow-next slide1-arrow" aria-label="Next screenshot"></label>
+                <label for="yt-slide1" class="arrow arrow-prev slide2-arrow" aria-label="Previous screenshot"></label>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>YouTube Video Sharing Platform</h3>
+              <p>
+                Full-stack social media platform supporting video uploads, playback, likes, comments, JWT authentication, user management, REST APIs and backend infrastructure.
+              </p>
+              <a href="https://github.com/Bendavidian/YouTube_Project" class="btn btn-project" target="_blank" rel="noopener noreferrer">View Project</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image-container">
+              <img src="images/rozenfeld.png" alt="Rozenfeld Insurance Website" class="project-img-static">
             </div>
             <div class="project-body">
               <h3>Rozenfeld Insurance Website</h3>
               <p>
-                A responsive insurance company website showcasing services, contact
-                flows, and a professional brand presence for clients.
+                Professional insurance agency website focused on customer acquisition, lead generation, conversion optimization, responsive design and digital insurance services.
               </p>
-              <a href="#" class="btn btn-project">View Project</a>
+              <a href="https://www.rozenfeld-ins.com/" class="btn btn-project" target="_blank" rel="noopener noreferrer">Visit Website</a>
             </div>
           </article>
         </div>
@@ -229,5 +268,25 @@
       <p>&copy; 2024 Ben Davidian. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+      
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+      });
+      
+      // Close menu when a link is clicked
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navLinks.classList.remove('active');
+        });
+      });
+    });
+  </script>
 </body>
 </html>
